@@ -7,7 +7,7 @@ function App() {
     <div className="App">
       Places App
 
-      <h3>Version: {version}</h3>
+      <footer>Version: {version}</footer>
     </div>
   );
 }
