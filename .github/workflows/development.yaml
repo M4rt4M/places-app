@@ -91,7 +91,7 @@ jobs:
 
   push_to_docker:
     name: Push image to docker
-    needs: [bump_version, get_commit_sha]
+    needs: [bump_version]
     runs-on: ubuntu-latest
     steps:
       - name: Check out code
@@ -100,7 +100,7 @@ jobs:
         uses: mr-smithers-excellent/docker-build-push@v5
         with:
           image: m4rt4m/places-app
-          tags: latest, ${{ needs.get_commit_sha.outputs.sha_output }}-SNAPSHOT, ${{ needs.bump_version.outputs.new_tag }}-SNAPSHOT
+          tags: ${{ needs.bump_version.outputs.new_tag }}-SNAPSHOT
           registry: docker.io
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
