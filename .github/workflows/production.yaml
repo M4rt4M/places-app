@@ -21,10 +21,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Set Up Node.js ${{ matrix.node-version}}
+      - name: Set Up Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2
         with: 
-          node-version: ${{ matrix.node-version}}
+          node-version: ${{ matrix.node-version }}
           cache: 'npm'
 
       - name: Install dependencies
