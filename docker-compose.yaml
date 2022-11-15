@@ -1,0 +1,8 @@
+version: '3'
+
+services: 
+  places-app:
+    container_name: places
+    image: m4rt4m/places-app:latest
+    ports: 
+      - '5001:80'
